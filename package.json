@@ -1,0 +1,12 @@
+{
+  "name": "icon-font-test",
+  "version": "0.0.0",
+  "description": "",
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-iconfont": "^2.0.0",
+    "gulp-iconfont-css": "0.0.9"
+  }
+}
