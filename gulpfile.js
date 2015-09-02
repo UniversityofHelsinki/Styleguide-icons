@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var iconfont = require('gulp-iconfont');
-var iconfontCss = require('gulp-iconfont-css');
+var consolidate = require('gulp-consolidate');
 
 var iconFontSettings = {
     fontName: 'hy-icons',
@@ -13,17 +13,22 @@ var iconFontSettings = {
 
 gulp.task('iconfont', function(){
   gulp.src([iconFontSettings.svgSrc])
-    .pipe(iconfontCss({
-      fontName: iconFontSettings.fontName,
-      targetPath: iconFontSettings.targetCssPath,
-      fontPath: iconFontSettings.fontCssPath
-    }))
     .pipe(iconfont({
       fontName: iconFontSettings.fontName,
       appendUnicode: true,
       normalize: true,
       descent: 11
      }))
+    .on('glyphs', function(glyphs) {
+      gulp.src('icons.css')
+        .pipe(consolidate('lodash', {
+          glyphs: glyphs,
+          fontName: iconFontSettings.fontName,
+          fontPath: iconFontSettings.fontCssPath,
+          className: 'hy'
+        }))
+        .pipe(gulp.dest('css/'));
+    })
     .pipe(gulp.dest(iconFontSettings.fontDest));
 });
 
