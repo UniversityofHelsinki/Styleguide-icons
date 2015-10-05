@@ -1,11 +1,12 @@
 {
-  "name": "icon-font-test",
-  "version": "0.0.0",
+  "name": "hy-icon-font",
+  "version": "3.0.2",
   "description": "",
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "gulp": "^3.9.0",
+    "gulp-clean": "^0.3.1",
     "gulp-consolidate": "^0.1.2",
     "gulp-iconfont": "^4.0.1",
     "lodash": "^3.10.1"

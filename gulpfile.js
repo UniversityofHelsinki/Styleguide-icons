@@ -1,9 +1,11 @@
 var gulp = require('gulp');
 var iconfont = require('gulp-iconfont');
 var consolidate = require('gulp-consolidate');
+var clean = require('gulp-clean');
+var version = require('./package.json').version;
 
 var iconFontSettings = {
-    fontName: 'hy-icons',
+    fontName: 'hy-icons_' + version,
     svgSrc: 'icons/svgs/*.svg',
     fontDest: 'fonts/',
     fontCssPath: '../fonts/',
@@ -32,4 +34,9 @@ gulp.task('iconfont', function(){
     .pipe(gulp.dest(iconFontSettings.fontDest));
 });
 
-gulp.task('default', ['iconfont']);
+gulp.task('clean', function () {
+  gulp.src(iconFontSettings.fontDest, {read: false})
+    .pipe(clean());
+});
+
+gulp.task('default', ['clean', 'iconfont']);

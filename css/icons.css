@@ -1,14 +1,14 @@
 @font-face {
-    font-family: 'hy-icons';
-    src: url('../fonts/hy-icons.eot');
-    src: url('../fonts/hy-icons.eot?#iefix') format('eot'), url('../fonts/hy-icons.woff') format('woff'), url('../fonts/hy-icons.ttf') format('truetype');
+    font-family: 'hy-icons_3.0.2';
+    src: url('../fonts/hy-icons_3.0.2.eot');
+    src: url('../fonts/hy-icons_3.0.2.eot?#iefix') format('eot'), url('../fonts/hy-icons_3.0.2.woff') format('woff'), url('../fonts/hy-icons_3.0.2.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 .hy:before {
                      display: inline-block;
-                     font-family: "hy-icons";
+                     font-family: "hy-icons_3.0.2";
                      font-style: normal;
                      font-weight: normal;
                      line-height: 1;
