@@ -5,7 +5,8 @@ var clean = require('gulp-clean');
 var version = require('./package.json').version;
 
 var iconFontSettings = {
-    fontName: 'hy-icons_' + version,
+    fontFileName : 'hy-icons_' + version,
+    fontName: 'hy-icons',
     svgSrc: 'icons/svgs/*.svg',
     fontDest: 'fonts/',
     fontCssPath: '../fonts/',
@@ -16,7 +17,7 @@ var iconFontSettings = {
 gulp.task('iconfont', function(){
   gulp.src([iconFontSettings.svgSrc])
     .pipe(iconfont({
-      fontName: iconFontSettings.fontName,
+      fontName: iconFontSettings.fontFileName,
       appendUnicode: true,
       normalize: true,
       descent: 11
@@ -25,6 +26,7 @@ gulp.task('iconfont', function(){
       gulp.src('icons.css')
         .pipe(consolidate('lodash', {
           glyphs: glyphs,
+          fontFileName : iconFontSettings.fontFileName,
           fontName: iconFontSettings.fontName,
           fontPath: iconFontSettings.fontCssPath,
           className: 'hy'
