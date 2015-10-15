@@ -20,7 +20,7 @@ gulp.task('iconfont', function(){
       fontName: iconFontSettings.fontFileName,
       appendUnicode: true,
       normalize: true,
-      descent: 11
+      descent: 6
      }))
     .on('glyphs', function(glyphs) {
       gulp.src('icons.css')

@@ -1,34 +1,73 @@
 @font-face {
     font-family: 'hy-icons';
-    src: url('../fonts/hy-icons_4.0.0.eot');
-    src: url('../fonts/hy-icons_4.0.0.eot?#iefix') format('eot'), url('../fonts/hy-icons_4.0.0.woff') format('woff'), url('../fonts/hy-icons_4.0.0.ttf') format('truetype');
+    src: url('../fonts/hy-icons_5.0.0.eot');
+    src: url('../fonts/hy-icons_5.0.0.eot?#iefix') format('eot'), url('../fonts/hy-icons_5.0.0.woff') format('woff'), url('../fonts/hy-icons_5.0.0.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
-.hy:before {
-                     display: inline-block;
-                     font-family: "hy-icons";
-                     font-style: normal;
-                     font-weight: normal;
-                     line-height: 1;
-                     -webkit-font-smoothing: antialiased;
-                     -moz-osx-font-smoothing: grayscale;
-                 }
+.hy {
+    display: inline-block;
+    font-family: "hy-icons";
+    font-style: normal;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 
-.hy-lg {
-                     font-size: 1.3333333333333333em;
-                     line-height: 0.75em;
-                     vertical-align: -15%;
-                 }
+.hy-rotate-90 {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -transform: rotate(90deg);
+}
+
+.hy-rotate-180 {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -transform: rotate(180deg);
+}
+
+.hy-rotate-270 {
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    -transform: rotate(270deg);
+}
+
+@-webkit-keyframes hy-spin {
+    from   { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@-moz-keyframes hy-spin {
+    from   { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+@-o-keyframes hy-spin {
+    from   { -o-transform: rotate(0deg); }
+    to { -o-transform: rotate(360deg); }
+}
+@keyframes hy-spin {
+    from   { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.hy-spin {
+    -webkit-animation: hy-spin 2s infinite linear;
+    -moz-animation: hy-spin 2s infinite linear;
+    -ms-animation: hy-spin 2s infinite linear;
+    -animation: hy-spin 2s infinite linear;
+}
+
+.hy:before {
+   box-sizing: border-box;
+}
+
 .hy-2x { font-size: 2em; }
 .hy-3x { font-size: 3em; }
 .hy-4x { font-size: 4em; }
 .hy-5x { font-size: 5em; }
-.hy-fw {
-                     width: 1.2857142857142858em;
-                     text-align: center;
-                 }
 
 .hy-add-to-todo-list:before { content: "\EA01" }
 .hy-arrow-up:before { content: "\EA02" }
