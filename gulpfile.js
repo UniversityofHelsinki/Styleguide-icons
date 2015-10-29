@@ -5,6 +5,7 @@ var clean = require('gulp-clean');
 var version = require('./package.json').version;
 
 var iconFontSettings = {
+    fontClassName : 'hy',
     fontFileName : 'hy-icons_' + version,
     fontName: 'hy-icons',
     svgSrc: 'icons/svgs/*.svg',
@@ -19,19 +20,35 @@ gulp.task('iconfont', function(){
     .pipe(iconfont({
       fontName: iconFontSettings.fontFileName,
       appendUnicode: true,
+      fontHeight: 1000,
       normalize: true,
       descent: 6
      }))
     .on('glyphs', function(glyphs) {
-      gulp.src('icons.css')
+      gulp.src('src/icons.css')
         .pipe(consolidate('lodash', {
           glyphs: glyphs,
           fontFileName : iconFontSettings.fontFileName,
           fontName: iconFontSettings.fontName,
           fontPath: iconFontSettings.fontCssPath,
-          className: 'hy'
+          className: iconFontSettings.fontClassName
         }))
         .pipe(gulp.dest('css/'));
+
+      gulp.src('src/variables.scss')
+        .pipe(consolidate('lodash', {
+          glyphs: glyphs,
+          className: iconFontSettings.fontClassName
+        }))
+        .pipe(gulp.dest('sass/'));
+
+      gulp.src('src/preview.html')
+        .pipe(consolidate('lodash', {
+          glyphs: glyphs,
+          className: iconFontSettings.fontClassName
+        }))
+        .pipe(gulp.dest('preview/'));
+
     })
     .pipe(gulp.dest(iconFontSettings.fontDest));
 });
