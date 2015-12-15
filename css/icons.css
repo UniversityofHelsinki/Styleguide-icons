@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'hy-icons';
-    src: url('../fonts/hy-icons_5.0.2.eot');
-    src: url('../fonts/hy-icons_5.0.2.eot?#iefix') format('eot'), url('../fonts/hy-icons_5.0.2.woff') format('woff'), url('../fonts/hy-icons_5.0.2.ttf') format('truetype');
+    src: url('../fonts/hy-icons_5.0.3.eot');
+    src: url('../fonts/hy-icons_5.0.3.eot?#iefix') format('eot'), url('../fonts/hy-icons_5.0.3.woff') format('woff'), url('../fonts/hy-icons_5.0.3.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -140,3 +140,6 @@
 .hy-phone:before { content: "\EA45" }
 .hy-preview:before { content: "\EA46" }
 .hy-url:before { content: "\EA47" }
+.hy-instagram:before { content: "\EA48" }
+.hy-login:before { content: "\EA49" }
+.hy-spinner:before { content: "\EA4A" }
